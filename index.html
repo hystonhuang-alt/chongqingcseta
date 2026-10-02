@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:title" content="澳洲重庆市文化体育教育旅游协会 CSETA">
+<meta property="og:description" content="把重庆带到澳洲，也把世界带回重庆。Connecting Chongqing and Australia through culture, sports, education and tourism.">
+<meta property="og:url" content="https://chongqingcseta.org/">
+<title>Chongqing CSETA</title>
+<meta name="description" content="澳洲重庆市文化体育教育旅游协会 Chongqing Cultural, Sports, Education and Tourism Association of Australia — 连接重庆与澳洲。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: two rivers meeting. A misty, terraced page — sections step down like Chongqing's 坡坎;
+   the Jialing (green) and Yangtze (ochre) run through it and merge at the recent-news "confluence". */
+:root{
+  --mist:#EDF0EE;       /* page ground: river fog */
+  --paper:#F8FAF8;      /* raised surface */
+  --ink:#15201E;        /* text */
+  --muted:#5A6865;      /* secondary text */
+  --line:#CCD5D2;       /* hairlines */
+  --jialing:#2D6A5C;    /* Jialing River green — primary accent */
+  --yangtze:#9C6A33;    /* Yangtze ochre — secondary accent */
+  --jialing-soft:#DCE8E3;
+  --yangtze-soft:#F0E5D6;
+  --f-display:"Noto Serif SC","Songti SC","STSong",Georgia,serif;
+  --f-body:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --step:clamp(16px,4vw,48px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --mist:#0D1413;--paper:#14201E;--ink:#E4EBE8;--muted:#93A29E;--line:#2A3936;
+    --jialing:#72B6A3;--yangtze:#D6A062;--jialing-soft:#17302A;--yangtze-soft:#2E2417;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --mist:#0D1413;--paper:#14201E;--ink:#E4EBE8;--muted:#93A29E;--line:#2A3936;
+  --jialing:#72B6A3;--yangtze:#D6A062;--jialing-soft:#17302A;--yangtze-soft:#2E2417;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--mist);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--jialing);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:var(--step)}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.25}
+p{margin:0}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* language: data-lang on <html> = zh | en */
+html[data-lang="zh"] [lang="en"]:not(.keep){display:none}
+html[data-lang="en"] [lang="zh-CN"]:not(.keep){display:none}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--mist) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:20px;min-height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+.brand svg{flex:none}
+.brand b{font-family:var(--f-display);font-weight:900;font-size:18px;letter-spacing:.04em}
+.brand small{display:block;font-size:11px;color:var(--muted);line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+nav.main{margin-left:auto;display:flex;gap:4px}
+nav.main a{text-decoration:none;font-size:14px;padding:6px 10px;border-radius:4px;color:var(--muted)}
+nav.main a:hover{color:var(--ink);background:var(--jialing-soft)}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;flex:none}
+.lang button{font:500 12px var(--f-mono);border:0;background:transparent;color:var(--muted);padding:6px 11px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--mist)}
+@media (max-width:860px){nav.main{display:none}.lang{margin-left:auto}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero .wrap{position:relative;padding-block:clamp(56px,10vw,120px) clamp(48px,8vw,96px)}
+.coords{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;font-size:12px;color:var(--muted)}
+.coords i{font-style:normal;color:var(--yangtze)}
+.hero h1{font-weight:900;font-size:clamp(36px,6.4vw,76px);letter-spacing:.01em;margin-top:22px;max-width:14em}
+.hero h1 .r{color:var(--jialing)}
+.hero h1 .y{color:var(--yangtze)}
+html[data-lang="en"] .hero h1{font-size:clamp(32px,5.2vw,62px);max-width:16em}
+.hero .lede{margin-top:22px;max-width:36em;font-size:clamp(16px,1.6vw,18px);color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:500;font-size:15px;padding:12px 20px;border-radius:4px;border:1px solid var(--ink)}
+.btn.solid{background:var(--ink);color:var(--mist)}
+.btn.solid:hover{background:var(--jialing);border-color:var(--jialing)}
+.btn.ghost:hover{background:var(--paper)}
+
+/* numbers strip */
+.nums{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line);background:var(--paper)}
+.nums div{padding:22px var(--step);border-right:1px solid var(--line)}
+.nums div:last-child{border-right:0}
+.nums b{display:block;font-family:var(--f-display);font-size:clamp(28px,3.4vw,40px);font-weight:700;line-height:1.1;font-variant-numeric:tabular-nums}
+.nums span{font-size:13px;color:var(--muted)}
+@media (max-width:760px){.nums{grid-template-columns:1fr 1fr}.nums div:nth-child(2){border-right:0}.nums div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+
+/* sections */
+section.blk{padding-block:clamp(64px,9vw,112px)}
+.head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:24px 56px;align-items:end;margin-bottom:48px}
+.head h2{font-size:clamp(28px,3.6vw,44px);font-weight:700;margin-top:10px}
+.head p{color:var(--muted);max-width:34em}
+@media (max-width:760px){.head{grid-template-columns:1fr}}
+
+/* recent: featured */
+.feature{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);background:var(--paper);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.poster{position:relative;min-height:380px;background:var(--ink);color:var(--mist);padding:28px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.poster canvas{position:absolute;inset:0;width:100%;height:100%}
+.poster>*{position:relative}
+.poster .big{font-family:var(--f-display);font-weight:900;font-size:clamp(44px,6vw,80px);line-height:1;letter-spacing:.04em;writing-mode:vertical-rl;align-self:flex-end}
+.poster .meta{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;opacity:.85;line-height:1.7}
+.feature .body{padding:clamp(24px,3.5vw,40px);display:flex;flex-direction:column;gap:16px;min-width:0}
+.feature h3{font-size:clamp(22px,2.4vw,28px);font-weight:700}
+.feature .body p{color:var(--muted)}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:14px;margin-top:4px}
+.facts dt{font-family:var(--f-mono);font-size:12px;color:var(--muted);padding-top:2px;white-space:nowrap}
+.facts dd{margin:0}
+@media (max-width:860px){.feature{grid-template-columns:1fr}.poster{min-height:280px}}
+
+/* timeline */
+.tl{margin-top:56px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px}
+.tl article{display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px;padding-block:22px;border-top:1px solid var(--line)}
+.tl time{font-family:var(--f-mono);font-size:13px;color:var(--yangtze);font-variant-numeric:tabular-nums;padding-top:3px}
+.tl h3{font-size:18px;font-weight:700;margin-bottom:6px}
+.tl p{font-size:15px;color:var(--muted)}
+.tag{display:inline-block;font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;padding:2px 8px;border-radius:999px;background:var(--jialing-soft);color:var(--jialing);margin-top:10px}
+.tag.y{background:var(--yangtze-soft);color:var(--yangtze)}
+@media (max-width:760px){.tl{grid-template-columns:1fr}.tl article{grid-template-columns:80px minmax(0,1fr)}}
+
+/* pillars */
+.pillars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:2px solid var(--ink)}
+.pillar{padding:28px 24px 32px 0;border-right:1px solid var(--line);min-width:0}
+.pillar+.pillar{padding-left:24px}
+.pillar:last-child{border-right:0}
+.pillar .zi{font-family:var(--f-display);font-weight:900;font-size:56px;line-height:1;color:var(--jialing)}
+.pillar:nth-child(even) .zi{color:var(--yangtze)}
+.pillar h3{font-size:19px;margin-top:16px}
+.pillar h3 .sub{display:block;font-family:var(--f-mono);font-size:12px;font-weight:400;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:2px}
+.pillar p{font-size:15px;color:var(--muted);margin-top:10px}
+.pillar ul{list-style:none;padding:0;margin:16px 0 0;font-size:14px;display:grid;gap:6px}
+.pillar li::before{content:"— ";color:var(--line)}
+@media (max-width:960px){.pillars{grid-template-columns:1fr 1fr}.pillar:nth-child(2){border-right:0}.pillar:nth-child(3){padding-left:0}.pillar:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media (max-width:520px){.pillars{grid-template-columns:1fr}.pillar,.pillar+.pillar{padding-left:0;border-right:0;border-bottom:1px solid var(--line)}}
+
+/* projects */
+.band{background:var(--paper);border-block:1px solid var(--line)}
+.projects{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.proj{background:var(--paper);padding:28px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.proj .row{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.proj .row .eyebrow{font-size:11px}
+.status{font-family:var(--f-mono);font-size:11px;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.status.on{background:var(--jialing-soft);color:var(--jialing)}
+.status.prep{background:var(--yangtze-soft);color:var(--yangtze)}
+.status.long{border:1px solid var(--line);color:var(--muted)}
+.proj h3{font-size:20px;font-weight:700}
+.proj p{font-size:15px;color:var(--muted)}
+@media (max-width:960px){.projects{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.projects{grid-template-columns:1fr}}
+
+/* 2027 */
+.next{display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);gap:32px 64px;align-items:center}
+.next .yr{font-family:var(--f-display);font-weight:900;font-size:clamp(88px,16vw,200px);line-height:.9;letter-spacing:-.02em;background:linear-gradient(100deg,var(--jialing) 0 48%,var(--yangtze) 52% 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.next h2{font-size:clamp(26px,3vw,38px)}
+.next p{color:var(--muted);margin-top:14px;max-width:34em}
+@media (max-width:760px){.next{grid-template-columns:1fr}}
+
+/* partners */
+.partners{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 48px}
+.partners h3{font-family:var(--f-mono);font-weight:400;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-bottom:12px;border-bottom:1px solid var(--line);margin-bottom:14px}
+.partners ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-family:var(--f-display);font-weight:500;font-size:17px}
+.partners li small{display:block;font-family:var(--f-body);font-size:13px;color:var(--muted);font-weight:400}
+@media (max-width:760px){.partners{grid-template-columns:1fr}}
+
+/* join */
+.join{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:8px}
+.join div{border:1px solid var(--line);border-radius:6px;padding:20px;background:var(--mist);min-width:0}
+.join b{font-family:var(--f-display);font-size:17px;display:block}
+.join p{font-size:14px;color:var(--muted);margin-top:6px}
+@media (max-width:860px){.join{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.join{grid-template-columns:1fr}}
+
+/* contact / footer */
+footer{background:var(--ink);color:var(--mist)}
+footer .wrap{padding-block:72px 40px}
+.contact{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:48px}
+.contact h2{font-size:clamp(28px,3.6vw,44px);font-weight:900}
+.contact .lede{opacity:.75;margin-top:14px;max-width:30em}
+.cl{display:grid;gap:18px}
+.cl div{display:grid;grid-template-columns:72px minmax(0,1fr) auto;gap:12px;align-items:baseline;border-bottom:1px solid color-mix(in srgb,var(--mist) 18%,transparent);padding-bottom:14px}
+.cl dt{font-family:var(--f-mono);font-size:12px;opacity:.6;letter-spacing:.08em}
+.cl dd{margin:0;font-size:17px;word-break:break-word;user-select:all}
+.copy{font:500 12px var(--f-mono);background:transparent;color:var(--mist);border:1px solid color-mix(in srgb,var(--mist) 35%,transparent);border-radius:999px;padding:4px 10px;cursor:pointer}
+.copy:hover{background:color-mix(in srgb,var(--mist) 12%,transparent)}
+.legal{margin-top:64px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:12px;opacity:.6}
+@media (max-width:760px){.contact{grid-template-columns:1fr}}
+</style>
+
+<style>html{color-scheme:light}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="CSETA 首页">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect x="1" y="1" width="32" height="32" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4 11 C12 11 14 18 17 22 C20 26 22 30 30 30" fill="none" stroke="var(--jialing)" stroke-width="2.4"/><path d="M4 26 C11 26 13 23 17 22" fill="none" stroke="var(--yangtze)" stroke-width="2.4"/></svg>
+      <span><b>CSETA</b><small>澳洲重庆市文化体育教育旅游协会</small></span>
+    </a>
+    <nav class="main" aria-label="主导航">
+      <a href="#recent"><span lang="zh-CN">近期动态</span><span lang="en">Recent</span></a>
+      <a href="#about"><span lang="zh-CN">关于协会</span><span lang="en">About</span></a>
+      <a href="#projects"><span lang="zh-CN">项目</span><span lang="en">Projects</span></a>
+      <a href="#partners"><span lang="zh-CN">合作</span><span lang="en">Partners</span></a>
+      <a href="#contact"><span lang="zh-CN">联系</span><span lang="en">Contact</span></a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" id="lang-zh" data-l="zh" aria-pressed="true">中文</button>
+      <button type="button" id="lang-en" data-l="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <canvas id="hills" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div class="coords mono"><span>CHONGQING 29.56°N 106.58°E</span><i>⇄</i><span>MELBOURNE 37.84°S 144.94°E</span></div>
+      <h1 lang="zh-CN">把<span class="r">重庆</span>带到澳洲，<br>也把世界带回<span class="y">重庆</span>。</h1>
+      <h1 lang="en">We bring <span class="r">Chongqing</span> to Australia, and connect the world back to <span class="y">Chongqing</span>.</h1>
+      <p class="lede" lang="zh-CN">澳洲重庆市文化体育教育旅游协会（CSETA）立足墨尔本，围绕文化、体育、教育、旅游四个方向，推动两地之间具体的人、具体的场景、具体的项目。</p>
+      <p class="lede" lang="en">The Chongqing Cultural, Sports, Education and Tourism Association of Australia (CSETA) is a Melbourne-based nonprofit building real exchange between Chongqing and Australia: specific people, specific places, specific projects.</p>
+      <div class="cta">
+        <a class="btn solid" href="#recent"><span lang="zh-CN">看近期动态</span><span lang="en">See what's new</span> ↓</a>
+        <a class="btn ghost" href="#join"><span lang="zh-CN">加入 / 合作</span><span lang="en">Join or partner</span></a>
+      </div>
+    </div>
+  </section>
+
+  <div class="nums" aria-label="2026 key figures">
+    <div><b>30</b><span lang="zh-CN">首原创歌曲 ·《重庆市民》</span><span lang="en">original songs in Chongqing Citizen</span></div>
+    <div><b>30</b><span lang="zh-CN">集 ·《重庆时空》第一季</span><span lang="en">episodes of Chongqing Chronicles S1</span></div>
+    <div><b>30+</b><span lang="zh-CN">人中澳两地制作团队</span><span lang="en">crew across Melbourne &amp; Chongqing</span></div>
+    <div><b>2027</b><span lang="zh-CN">重庆直辖三十周年</span><span lang="en">Chongqing's 30th as a municipality</span></div>
+  </div>
+
+  <!-- RECENT -->
+  <section class="blk" id="recent">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <div class="eyebrow">Recent · 2026</div>
+          <h2 lang="zh-CN">近期动态</h2>
+          <h2 lang="en">What we've been doing</h2>
+        </div>
+        <p lang="zh-CN">今年六月，协会在墨尔本为重庆直辖二十九周年办了一场城市音乐电影首映。之后的几个月，这件事在重庆和墨尔本两边都继续发生着。</p>
+        <p lang="en">In June we marked Chongqing's 29th anniversary as a municipality with a city music film premiere in Melbourne. The months since have carried that work forward in both cities.</p>
+      </div>
+
+      <article class="feature">
+        <div class="poster">
+          <canvas id="river" aria-hidden="true"></canvas>
+          <div class="meta">LIVE FILM PREMIERE<br>2026.06.18 · CHINATOWN CINEMA MELBOURNE</div>
+          <div class="big">重庆市民</div>
+          <div class="meta">上篇《山城来信》· 下篇《江水回声》</div>
+        </div>
+        <div class="body">
+          <div class="eyebrow">Featured · 2026.06.18</div>
+          <h3 lang="zh-CN">《重庆市民》城市音乐 Live Film 首映暨重庆直辖二十九周年活动</h3>
+          <h3 lang="en">Chongqing Citizen: City Music Live Film premiere and Chongqing's 29th anniversary</h3>
+          <p lang="zh-CN">由协会主办、HYSTON 团队制作，维多利亚州政府支持。作品由三十首原创歌曲与三十个电影章节构成，以坡坎街道、长江水岸、轻轨穿楼、洪崖洞夜景为背景，分上篇《山城来信》与下篇《江水回声》两幕放映。</p>
+          <p lang="en">Hosted by CSETA, produced by HYSTON and supported by the Victorian Government. Thirty original songs and thirty film chapters set among Chongqing's stairways, riverbanks and hillside light rail, screened in two parts: A Letter from the Mountain City and Echoes of the River.</p>
+          <dl class="facts">
+            <dt>VENUE</dt><dd lang="zh-CN">墨尔本京华影院 Chinatown Cinema</dd><dd lang="en">Chinatown Cinema, Melbourne</dd>
+            <dt>GUESTS</dt><dd lang="zh-CN">中国驻墨尔本总领馆总领事夫人曾晖女士致辞；联邦议员 Gabriel Ng MP 视频祝福；多位州市议员及社区代表出席</dd><dd lang="en">Remarks by Ms Zeng Hui, spouse of the PRC Consul-General in Melbourne; video message from Gabriel Ng MP; state and local councillors and community leaders attended</dd>
+            <dt>CREW</dt><dd lang="zh-CN">HYSTON 中澳团队 30 余人</dd><dd lang="en">30+ HYSTON crew across two countries</dd>
+          </dl>
+        </div>
+      </article>
+
+      <div class="tl">
+        <article>
+          <time datetime="2026-09">2026.09</time>
+          <div>
+            <h3 lang="zh-CN">回访重庆艺术大市场</h3>
+            <h3 lang="en">Return visit to Chongqing Art Market</h3>
+            <p lang="zh-CN">会长 Hyston Huang 将墨尔本书法家杨春瑞的作品带回重庆，赠予重庆艺术大市场总经理邓雪。双方就艺术家交流与文化产品出海渠道继续沟通。</p>
+            <p lang="en">President Hyston Huang carried a calligraphy work by Melbourne artist Yang Chunrui to Chongqing, presented to Deng Xue, general manager of Chongqing Art Market. Talks continue on artist exchange and an overseas channel for cultural products.</p>
+            <span class="tag y">Culture · 文化</span>
+          </div>
+        </article>
+        <article>
+          <time datetime="2026-07">2026.07</time>
+          <div>
+            <h3 lang="zh-CN">联合支持网球生活节目《场上见》</h3>
+            <h3 lang="en">Community partner for tennis series 场上见</h3>
+            <p lang="zh-CN">协会作为联合支持方（In association with），参与华人网球与生活方式节目《场上见》第一季，用球场连接墨尔本的华人社群与本地社区。</p>
+            <p lang="en">CSETA joined Season 1 of 场上见 (See You on Court), a Chinese-Australian tennis and lifestyle series, as community partner, using the court to bring Melbourne communities together.</p>
+            <span class="tag">Sport · 体育</span>
+          </div>
+        </article>
+        <article>
+          <time datetime="2026-06-18">2026.06.18</time>
+          <div>
+            <h3 lang="zh-CN">「山城力量计划」正式发布</h3>
+            <h3 lang="en">Mountain City Power Initiative launched</h3>
+            <p lang="zh-CN">由白马市市长 Cr Kirsten Langford 与 Hyston 共同发起。首阶段聚焦重庆山区学校与女性教育工作者，通过品牌直寄、物资认捐和社区资源连接，送去女性用品、教学物资与生活支持。</p>
+            <p lang="en">Co-initiated by Whitehorse Mayor Cr Kirsten Langford and Hyston. Phase one supports mountain-area schools and women educators in Chongqing through direct brand shipments, pledged supplies and community connections.</p>
+            <span class="tag y">Education · 教育</span>
+          </div>
+        </article>
+        <article>
+          <time datetime="2026-06-18">2026.06.18</time>
+          <div>
+            <h3 lang="zh-CN">《重庆时空》第一季终章《朝天门》在墨尔本录制</h3>
+            <h3 lang="en">Chongqing Chronicles S1 finale recorded in Melbourne</h3>
+            <p lang="zh-CN">九位中澳嘉宾接力朗读，完成第三十集《朝天门》。第一季三十集与《重庆市民》三十个章节一一对应，组成完整的重庆城市影像叙事。</p>
+            <p lang="en">Nine Chinese and Australian guests read in relay to complete episode 30, Chaotianmen. The season's thirty episodes pair one-to-one with the thirty chapters of Chongqing Citizen.</p>
+            <span class="tag">Culture · 文化</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / PILLARS -->
+  <section class="blk band" id="about">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <div class="eyebrow">About · 关于协会</div>
+          <h2 lang="zh-CN">交流不是一次性的合影</h2>
+          <h2 lang="en">Exchange is more than a photo op</h2>
+        </div>
+        <p lang="zh-CN">从山城到海岸，从火锅到球场，从课堂到旅途。协会是在澳大利亚维多利亚州注册的非营利组织，HYSTON 提供创意与数字支持。</p>
+        <p lang="en">From mountain city to coastline, hotpot to tennis court, classroom to journey. CSETA is a nonprofit incorporated in Victoria, Australia, with creative and digital support from HYSTON.</p>
+      </div>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="zi">文</div>
+          <h3><span lang="zh-CN">文化交流</span><span lang="en">Culture</span><span class="sub" lang="zh-CN">Culture</span></h3>
+          <p lang="zh-CN">重庆城市影像、音乐、巴渝艺术、美食与青年表达在澳洲的传播。</p>
+          <p lang="en">Chongqing's film, music, Bayu art, food and youth voices, brought to Australian audiences.</p>
+          <ul><li>《重庆市民》</li><li>《重庆时空》</li><li lang="zh-CN">艺术家交流</li><li lang="en">Artist exchange</li></ul>
+        </div>
+        <div class="pillar">
+          <div class="zi">体</div>
+          <h3><span lang="zh-CN">体育发展</span><span lang="en">Sport</span><span class="sub" lang="zh-CN">Sport</span></h3>
+          <p lang="zh-CN">以社交网球和社区运动为入口，连接青年、留学生、女性和新移民。</p>
+          <p lang="en">Social tennis and community sport as a way in for youth, international students, women and new arrivals.</p>
+          <ul><li>《场上见》</li><li>Parallel Courts</li></ul>
+        </div>
+        <div class="pillar">
+          <div class="zi">教</div>
+          <h3><span lang="zh-CN">教育合作</span><span lang="en">Education</span><span class="sub" lang="zh-CN">Education</span></h3>
+          <p lang="zh-CN">中澳学校、青年项目、研学营，以及面向重庆山区学校的公益支持。</p>
+          <p lang="en">School links, youth programs, study tours, and support for mountain-area schools in Chongqing.</p>
+          <ul><li lang="zh-CN">山城力量计划</li><li lang="en">Mountain City Power</li><li lang="zh-CN">重庆研学</li><li lang="en">Study tours</li></ul>
+        </div>
+        <div class="pillar">
+          <div class="zi">旅</div>
+          <h3><span lang="zh-CN">文旅推广</span><span lang="en">Tourism</span><span class="sub" lang="zh-CN">Tourism</span></h3>
+          <p lang="zh-CN">重庆文旅资源出海，接待两地代表团，协助行程与资源对接。</p>
+          <p lang="en">Promoting Chongqing to Australia and supporting delegations in both directions.</p>
+          <ul><li lang="zh-CN">代表团接待</li><li lang="en">Delegation support</li><li lang="zh-CN">城市推广</li><li lang="en">City promotion</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="blk" id="projects">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <div class="eyebrow">Projects · 项目</div>
+          <h2 lang="zh-CN">正在做的事</h2>
+          <h2 lang="en">Current projects</h2>
+        </div>
+        <p lang="zh-CN">每个项目都标明了当前状态。想参与哪一个，直接写信给我们。</p>
+        <p lang="en">Each project shows where it stands now. Write to us about any of them.</p>
+      </div>
+      <div class="projects">
+        <div class="proj">
+          <div class="row"><span class="eyebrow">Charity</span><span class="status on" lang="zh-CN">进行中</span><span class="status on" lang="en">Active</span></div>
+          <h3 lang="zh-CN">山城力量计划</h3><h3 lang="en">Mountain City Power Initiative</h3>
+          <p lang="zh-CN">为重庆山区学校与女性教育工作者募集女性用品与教学物资。品牌和个人都可以认捐实物。</p>
+          <p lang="en">Supplies for mountain-area schools and women educators in Chongqing. Brands and individuals can pledge goods.</p>
+        </div>
+        <div class="proj">
+          <div class="row"><span class="eyebrow">Sport</span><span class="status prep" lang="zh-CN">筹备中</span><span class="status prep" lang="en">In development</span></div>
+          <h3>Parallel Courts</h3>
+          <p lang="zh-CN">中澳青少年体育与文化交流计划。以社交网球为平台，为期十二个月，面向青年、留学生、女性和初学者。</p>
+          <p lang="en">A 12-month Australia–China youth sport and culture exchange built on social tennis, for youth, students, women and beginners.</p>
+        </div>
+        <div class="proj">
+          <div class="row"><span class="eyebrow">Film</span><span class="status long" lang="zh-CN">长期</span><span class="status long" lang="en">Ongoing</span></div>
+          <h3 lang="zh-CN">《重庆时空》</h3><h3 lang="en">Chongqing Chronicles</h3>
+          <p lang="zh-CN">重庆城市纪录系列。第一季三十集已完成，从地形、迁徙、码头文化到城市更新。</p>
+          <p lang="en">A documentary series on Chongqing. Season 1's thirty episodes cover terrain, migration, river-port culture and urban renewal.</p>
+        </div>
+        <div class="proj">
+          <div class="row"><span class="eyebrow">Education</span><span class="status prep" lang="zh-CN">筹备中</span><span class="status prep" lang="en">In development</span></div>
+          <h3 lang="zh-CN">澳洲青年重庆研学</h3><h3 lang="en">Chongqing Study Tour</h3>
+          <p lang="zh-CN">为澳洲学生、创作者和机构代表设计重庆访问路线：学校交流、企业参访、城市探索。</p>
+          <p lang="en">Chongqing itineraries for Australian students, creators and institutions: school visits, company visits, city exploration.</p>
+        </div>
+        <div class="proj">
+          <div class="row"><span class="eyebrow">Culture</span><span class="status on" lang="zh-CN">进行中</span><span class="status on" lang="en">Active</span></div>
+          <h3 lang="zh-CN">艺术家与文化产品交流</h3><h3 lang="en">Artist &amp; Cultural Goods Exchange</h3>
+          <p lang="zh-CN">与重庆艺术大市场合作，推动两地艺术家互访与重庆文化产品进入澳洲。</p>
+          <p lang="en">With Chongqing Art Market, building artist exchange and a path for Chongqing cultural products into Australia.</p>
+        </div>
+        <div class="proj">
+          <div class="row"><span class="eyebrow">Tourism</span><span class="status long" lang="zh-CN">长期</span><span class="status long" lang="en">Ongoing</span></div>
+          <h3 lang="zh-CN">代表团接待与资源对接</h3><h3 lang="en">Delegation Support</h3>
+          <p lang="zh-CN">为两地政府机构、企业、学校与协会提供本地联络、行程协助与活动执行。</p>
+          <p lang="en">Local liaison, itineraries and event delivery for government, business, school and association delegations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2027 -->
+  <section class="blk band">
+    <div class="wrap next">
+      <div class="yr mono" aria-hidden="true">2027</div>
+      <div>
+        <div class="eyebrow">Next · 下一站</div>
+        <h2 lang="zh-CN">重庆直辖三十周年，我们在墨尔本准备下一场</h2>
+        <h2 lang="en">Chongqing turns 30 as a municipality. We're planning the Melbourne celebration.</h2>
+        <p lang="zh-CN">2027 年的活动正在筹备，我们在寻找联合主办方、赞助方、演出艺术家和志愿者。</p>
+        <p lang="en">Planning for 2027 is under way. We're looking for co-hosts, sponsors, performing artists and volunteers.</p>
+        <div class="cta"><a class="btn solid" href="#contact"><span lang="zh-CN">参与 2027</span><span lang="en">Get involved</span> →</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS -->
+  <section class="blk" id="partners">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <div class="eyebrow">Partners · 合作</div>
+          <h2 lang="zh-CN">一起搭桥的人</h2>
+          <h2 lang="en">Who we work with</h2>
+        </div>
+        <p lang="zh-CN">感谢支持和参与 2026 年项目的机构。</p>
+        <p lang="en">With thanks to the organisations that supported and took part in our 2026 work.</p>
+      </div>
+      <div class="partners">
+        <div>
+          <h3><span lang="zh-CN">支持</span><span lang="en">Supported by</span></h3>
+          <ul><li>Victorian Government<small lang="zh-CN">维多利亚州政府</small></li></ul>
+        </div>
+        <div>
+          <h3><span lang="zh-CN">重庆合作与参与机构</span><span lang="en">Chongqing partners</span></h3>
+          <ul>
+            <li>重庆艺术大市场<small>Chongqing Art Market</small></li>
+            <li>国泰艺术中心<small>Guotai Arts Center</small></li>
+            <li>三峡移民博物馆<small>Three Gorges Migration Museum</small></li>
+            <li>重庆文理学院<small>Chongqing University of Arts and Sciences</small></li>
+          </ul>
+        </div>
+        <div>
+          <h3><span lang="zh-CN">创意与制作</span><span lang="en">Creative &amp; production</span></h3>
+          <ul><li>HYSTON<small lang="zh-CN">墨尔本 · 重庆</small><small lang="en">Melbourne · Chongqing</small></li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOIN -->
+  <section class="blk band" id="join">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <div class="eyebrow">Join · 加入</div>
+          <h2 lang="zh-CN">和我们一起</h2>
+          <h2 lang="en">Work with us</h2>
+        </div>
+        <p lang="zh-CN">无论你是机构、品牌，还是想参与中澳交流的个人，都可以从这里开始。</p>
+        <p lang="en">Organisations, brands and individuals who want to be part of Chongqing–Australia exchange can start here.</p>
+      </div>
+      <div class="join">
+        <div><b lang="zh-CN">会员</b><b lang="en">Members</b><p lang="zh-CN">参加协会活动、社群与年度聚会。</p><p lang="en">Events, community and our annual gathering.</p></div>
+        <div><b lang="zh-CN">赞助与品牌合作</b><b lang="en">Sponsors &amp; brands</b><p lang="zh-CN">活动冠名、物资认捐、联合内容。</p><p lang="en">Event sponsorship, pledged goods, co-created content.</p></div>
+        <div><b lang="zh-CN">机构与学校</b><b lang="en">Institutions &amp; schools</b><p lang="zh-CN">交流项目、研学与代表团对接。</p><p lang="en">Exchange programs, study tours, delegations.</p></div>
+        <div><b lang="zh-CN">志愿者</b><b lang="en">Volunteers</b><p lang="zh-CN">活动执行、翻译、影像记录。</p><p lang="en">Event crew, translation, photo and video.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <div>
+        <div class="eyebrow" style="color:inherit;opacity:.6">Contact · 联系</div>
+        <h2 lang="zh-CN">写信给我们</h2>
+        <h2 lang="en">Get in touch</h2>
+        <p class="lede" lang="zh-CN">合作、入会、赞助或媒体采访，请发邮件，注明你的机构和想法。</p>
+        <p class="lede" lang="en">For partnerships, membership, sponsorship or media, email us with your organisation and what you have in mind.</p>
+      </div>
+      <dl class="cl">
+        <div><dt>EMAIL</dt><dd id="em">chongqing@hyston.life</dd><button class="copy" type="button" data-copy="em">Copy</button></div>
+        <div><dt>PHONE</dt><dd id="ph">0424 020 618</dd><button class="copy" type="button" data-copy="ph">Copy</button></div>
+        <div><dt>ADDRESS</dt><dd>2 Workers St, Port Melbourne VIC 3207</dd><span></span></div>
+        <div><dt>WEB</dt><dd>chongqingcseta.org</dd><span></span></div>
+      </dl>
+    </div>
+    <div class="legal">
+      <span>© 2026 Chongqing Cultural, Sports, Education and Tourism Association of Australia Inc. · ABN 93 545 406 258</span>
+      <span>澳洲重庆市文化体育教育旅游协会</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const root=document.documentElement;
+  function setLang(l){
+    root.dataset.lang=l; root.lang = l==='zh'?'zh-CN':'en';
+    document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l));
+    try{localStorage.setItem('cseta-lang',l)}catch(e){}
+  }
+  let saved=null; try{saved=localStorage.getItem('cseta-lang')}catch(e){}
+  if(location.hash==='#en') saved='en';
+  setLang(saved==='en'?'en':'zh');
+  document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.l)));
+
+  document.querySelectorAll('.copy').forEach(btn=>btn.addEventListener('click',()=>{
+    const el=document.getElementById(btn.dataset.copy); const t=el.textContent.trim();
+    const done=()=>{btn.textContent='Copied';setTimeout(()=>btn.textContent='Copy',1600)};
+    const sel=()=>{const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Selected'};
+    try{navigator.clipboard.writeText(t).then(done,sel)}catch(e){sel()}
+  }));
+
+  const css=n=>getComputedStyle(root).getPropertyValue(n).trim();
+
+  // Hero: stacked mountain ridges in fog, with two rivers converging (Chaotianmen)
+  function hills(){
+    const c=document.getElementById('hills'); if(!c) return;
+    const r=c.getBoundingClientRect(), d=Math.min(devicePixelRatio||1,2);
+    c.width=r.width*d; c.height=r.height*d; const x=c.getContext('2d'); x.scale(d,d);
+    const W=r.width,H=r.height, ink=css('--ink'), j=css('--jialing'), y=css('--yangtze');
+    let s=7; const rnd=()=>(s=(s*16807)%2147483647)/2147483647;
+    for(let i=0;i<7;i++){
+      const base=H*(0.42+i*0.08), amp=26+i*6;
+      x.beginPath(); x.moveTo(0,H);
+      const ph=rnd()*6, f=0.004+rnd()*0.004;
+      for(let px=0;px<=W;px+=6){
+        const yy=base-Math.abs(Math.sin(px*f+ph))*amp-Math.sin(px*f*2.7+ph)*amp*0.35;
+        x.lineTo(px,yy);
+      }
+      x.lineTo(W,H); x.closePath();
+      x.globalAlpha=0.035+i*0.012; x.fillStyle=ink; x.fill();
+      x.globalAlpha=0.12; x.strokeStyle=ink; x.lineWidth=0.8; x.stroke();
+    }
+    x.globalAlpha=1;
+    const meet={x:W*0.72,y:H*0.86};
+    function river(col,from,cp,w){
+      x.beginPath(); x.moveTo(from.x,from.y); x.quadraticCurveTo(cp.x,cp.y,meet.x,meet.y);
+      x.strokeStyle=col; x.lineWidth=w; x.lineCap='round'; x.globalAlpha=.75; x.stroke();
+    }
+    river(j,{x:W*0.38,y:H*0.62},{x:W*0.6,y:H*0.66},3);
+    river(y,{x:W*0.5,y:H*1.02},{x:W*0.64,y:H*0.96},5);
+    x.beginPath(); x.moveTo(meet.x,meet.y); x.quadraticCurveTo(W*0.86,H*0.8,W+10,H*0.84);
+    x.strokeStyle=y; x.lineWidth=6; x.stroke(); x.globalAlpha=1;
+    x.fillStyle=ink; x.beginPath(); x.arc(meet.x,meet.y,4,0,7); x.fill();
+    x.font='500 11px "IBM Plex Mono",monospace'; x.globalAlpha=.6;
+    if(W>620) x.fillText('朝天门 CHAOTIANMEN',meet.x+10,meet.y-10);
+    x.globalAlpha=1;
+  }
+  // Poster: contour lines like a topographic map of the peninsula
+  function river(){
+    const c=document.getElementById('river'); if(!c) return;
+    const r=c.getBoundingClientRect(), d=Math.min(devicePixelRatio||1,2);
+    c.width=r.width*d; c.height=r.height*d; const x=c.getContext('2d'); x.scale(d,d);
+    const W=r.width,H=r.height;
+    for(let k=0;k<22;k++){
+      x.beginPath();
+      for(let px=-10;px<=W+10;px+=5){
+        const yy=H*0.1+k*(H/20)+Math.sin(px*0.012+k*0.5)*14+Math.sin(px*0.031+k)*5;
+        px<0?x.moveTo(px,yy):x.lineTo(px,yy);
+      }
+      x.strokeStyle= k%5===0 ? css('--yangtze') : css('--jialing');
+      x.globalAlpha= k%5===0 ? .55 : .22; x.lineWidth= k%5===0?1.4:.8; x.stroke();
+    }
+  }
+  function draw(){hills();river()}
+  draw();
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(draw);
+  let t; addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(draw,120)});
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change',draw);
+  new MutationObserver(draw).observe(root,{attributes:true,attributeFilter:['data-theme']});
+})();
+</script>
+
+</body>
+</html>
