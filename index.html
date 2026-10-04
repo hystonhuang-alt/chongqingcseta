@@ -195,6 +195,19 @@ footer .wrap{padding-block:72px 40px}
 .copy:hover{background:color-mix(in srgb,var(--mist) 12%,transparent)}
 .legal{margin-top:64px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:12px;opacity:.6}
 @media (max-width:760px){.contact{grid-template-columns:1fr}}
+
+/* Federation Square lead item */
+.fedsq{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:16px 48px;padding-block:8px 48px;margin-bottom:48px;border-bottom:1px solid var(--line)}
+.fs-date{display:flex;flex-direction:column;gap:6px}
+.fs-date time{font-size:clamp(28px,3vw,36px);color:var(--yangtze);line-height:1.1}
+.fs-body{display:flex;flex-direction:column;gap:14px;min-width:0;max-width:46em}
+.fs-body h3{font-size:clamp(24px,2.8vw,32px);font-weight:700}
+.fs-body p{color:var(--muted)}
+.fs-guests{font-size:14px;border-left:2px solid var(--jialing);padding-left:14px}
+.fs-body blockquote{margin:0;font-family:var(--f-display);font-size:clamp(18px,1.9vw,21px);line-height:1.6;color:var(--ink)}
+.fs-body cite{display:block;font:400 13px var(--f-body);color:var(--muted);margin-top:6px;font-style:normal}
+.fs-body .tag{align-self:flex-start;margin-top:0}
+@media (max-width:760px){.fedsq{grid-template-columns:1fr}}
 </style>
 
 <style>html{color-scheme:light}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
@@ -252,9 +265,24 @@ footer .wrap{padding-block:72px 40px}
           <h2 lang="zh-CN">近期动态</h2>
           <h2 lang="en">What we've been doing</h2>
         </div>
-        <p lang="zh-CN">今年六月，协会在墨尔本为重庆直辖二十九周年办了一场城市音乐电影首映。之后的几个月，这件事在重庆和墨尔本两边都继续发生着。</p>
-        <p lang="en">In June we marked Chongqing's 29th anniversary as a municipality with a city music film premiere in Melbourne. The months since have carried that work forward in both cities.</p>
+        <p lang="zh-CN">六月，协会在墨尔本为重庆直辖二十九周年办了一场城市音乐电影首映；九月，川渝文化展位走进联邦广场。这些相遇正在重庆和墨尔本两边继续发生。</p>
+        <p lang="en">In June we marked Chongqing's 29th anniversary with a city music film premiere in Melbourne. In September we brought Sichuan–Chongqing culture to Federation Square. The work continues in both cities.</p>
       </div>
+
+      <article class="fedsq">
+      <div class="fs-date"><time datetime="2026-09-19" class="mono">2026.09.19</time><span class="eyebrow">Federation Square</span></div>
+      <div class="fs-body">
+        <h3 lang="zh-CN">川渝文化亮相墨尔本联邦广场</h3>
+        <h3 lang="en">Sichuan–Chongqing culture at Federation Square</h3>
+        <p lang="zh-CN">2026 中国传统文化节在联邦广场举行。协会与澳洲川渝文化教育体育协会、HYSTON 团队共同呈现川渝文化主题展位：熊猫意象、巴渝服饰、重庆城市影像、青年创意内容，以及《重庆市民》Live Film 与重庆直辖二十九周年活动回顾。不少本地观众在展位前停下来，问起去重庆旅行、学习和合作的可能。</p>
+        <p lang="en">At the Chinese Traditional Cultural Festival 2026 in Federation Square, CSETA, the Sichuan-Chongqing Culture, Education and Sports Association of Australia and HYSTON presented a Sichuan–Chongqing booth: panda imagery, Bayu-inspired clothing, Chongqing city film, youth creative work, and a look back at the Chongqing Citizen premiere. Many visitors stopped to ask about travel, study and partnerships in Chongqing.</p>
+        <p class="fs-guests" lang="zh-CN">到访展位及出席开幕的嘉宾包括：维州多元文化事务部长 Paul Edbrooke MP、中国驻墨尔本副总领事刘东源、联邦众议员 Gabriel Ng MP、墨尔本市议员 Gladys Liu 与 Rafael Camillo、维州议员 John Mullahy MP。</p>
+        <p class="fs-guests" lang="en">Guests at the opening and the booth included the Hon Paul Edbrooke MP, Victorian Minister for Multicultural Affairs; Deputy Consul-General Liu Dongyuan; Gabriel Ng MP; Councillors Gladys Liu and Rafael Camillo; and John Mullahy MP.</p>
+        <blockquote lang="zh-CN">“文化真正的意义，不只是把一个地方展示出来，而是让原本不认识的人，因为它走到一起。”<cite>— 会长 Hyston Huang</cite></blockquote>
+        <blockquote lang="en">“The meaning of culture is not simply to display where we come from. It is to bring together people who may never otherwise have met.”<cite>— Hyston Huang, President</cite></blockquote>
+        <span class="tag">Culture · 文化</span>
+      </div>
+    </article>
 
       <article class="feature">
         <div class="poster">
@@ -460,6 +488,8 @@ footer .wrap{padding-block:72px 40px}
             <li>三峡移民博物馆<small>Three Gorges Migration Museum</small></li>
             <li>重庆文理学院<small>Chongqing University of Arts and Sciences</small></li>
           </ul>
+          <h3 style="margin-top:28px"><span lang="zh-CN">联合呈现</span><span lang="en">Co-presented with</span></h3>
+          <ul><li>澳洲川渝文化教育体育协会<small>Federation Square booth, 2026.09</small></li></ul>
         </div>
         <div>
           <h3><span lang="zh-CN">创意与制作</span><span lang="en">Creative &amp; production</span></h3>
