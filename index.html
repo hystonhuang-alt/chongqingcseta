@@ -167,6 +167,15 @@ section.blk{padding-block:clamp(64px,9vw,112px)}
 .next p{color:var(--muted);margin-top:14px;max-width:34em}
 @media (max-width:760px){.next{grid-template-columns:1fr}}
 
+/* CBAA partner link, scoped to partner section */
+.cbaa-featured{display:grid;grid-template-columns:73px minmax(0,1fr) auto;gap:20px;align-items:center;padding:26px 29px;margin:0 0 32px;border:1px solid var(--line);border-left:3px solid var(--yangtze);background:var(--paper);text-decoration:none;color:var(--ink);transition:background .2s,border-color .2s}
+.cbaa-featured:hover{background:var(--yangtze-soft);border-color:var(--yangtze)}
+.cbaa-featured .cbaa-seal{width:73px;height:73px;object-fit:contain}
+.cbaa-featured .cbaa-info h3{font-family:var(--f-display);font-size:clamp(18px,2.4vw,26px);line-height:1.45;margin:8px 0}
+.cbaa-featured .cbaa-info p{color:var(--muted);font-size:13px;line-height:1.65}
+.cbaa-featured .cbaa-link{font-size:12px;color:var(--jialing);white-space:nowrap}
+@media(max-width:760px){.cbaa-featured{grid-template-columns:54px minmax(0,1fr);gap:12px;padding:18px}.cbaa-featured .cbaa-seal{width:54px;height:54px}.cbaa-featured .cbaa-link{grid-column:2}.cbaa-featured .cbaa-info h3{font-size:20px}}
+
 /* partners */
 .partners{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 48px}
 .partners h3{font-family:var(--f-mono);font-weight:400;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-bottom:12px;border-bottom:1px solid var(--line);margin-bottom:14px}
@@ -247,6 +256,7 @@ footer .wrap{padding-block:72px 40px}
       <a href="#about"><span lang="zh-CN">关于协会</span><span lang="en">About</span></a>
       <a href="#projects"><span lang="zh-CN">项目</span><span lang="en">Projects</span></a>
       <a href="#partners"><span lang="zh-CN">合作</span><span lang="en">Partners</span></a>
+      <a href="/partners/cbaa/"><span lang="zh-CN">重庆商会</span><span lang="en">Business Chamber</span></a>
       <a href="#contact"><span lang="zh-CN">联系</span><span lang="en">Contact</span></a>
     </nav>
     <div class="lang" role="group" aria-label="Language">
@@ -517,6 +527,18 @@ footer .wrap{padding-block:72px 40px}
         <p lang="zh-CN">感谢支持和参与 2026 年项目的机构。</p>
         <p lang="en">With thanks to the organisations that supported and took part in our 2026 work.</p>
       </div>
+      <!-- CBAA partner, independent organisation with dedicated profile -->
+      <a href="/partners/cbaa/" class="cbaa-featured">
+        <img class="cbaa-seal" src="https://chongqing-business-association-australia.vercel.app/assets/cbaa-emblem.webp" alt="" width="73" height="73" loading="lazy">
+        <span class="cbaa-info">
+          <span class="eyebrow">BUSINESS PARTNER / 澳中经贸</span>
+          <h3 lang="zh-CN">澳洲重庆市商会</h3>
+          <h3 lang="en">Chongqing Business Association of Australia</h3>
+          <p lang="zh-CN">独立合作伙伴 · 服务贸易 · 企业国际化 · 澳洲市场对接</p>
+          <p lang="en">Independent partner · Trade in services · Australian market entry</p>
+        </span>
+        <span class="cbaa-link"><span lang="zh-CN">查看商会分支</span><span lang="en">Explore partner</span> ↗</span>
+      </a>
       <div class="partners">
         <div>
           <h3><span lang="zh-CN">支持</span><span lang="en">Supported by</span></h3>
